@@ -194,8 +194,8 @@ export default function Home() {
         <Image
           src="/logo.png" // Updated logo path
           alt="食刻 Logo"
-          width={150} // Adjusted size
-          height={150} // Adjusted size
+          width={120} // Adjusted size
+          height={120} // Adjusted size
           priority
           data-ai-hint="groceries box"
         />
