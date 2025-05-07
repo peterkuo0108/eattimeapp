@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Redirecting</title>
+  <script type="text/javascript">
+    const basePath = '/eattime';
+    // Redirect to the root of the application, preserving the path, search, and hash
+    // to be handled by the client-side router.
+    // This assumes your 404.html is at the root of your GitHub Pages deployment.
+    // e.g. if you hit https://username.github.io/eattime/some/path -> 404
+    // this script will try to redirect to https://username.github.io/eattime/#/some/path
+    // Your client-side router needs to be able to pick up the path from the hash.
+
+    // A simpler redirect for GitHub Pages SPA with basePath:
+    // Just try to reload the index.html from the basePath.
+    // The original path might be lost for the router unless it's passed differently.
+    // This specific script tries to use the session storage hack for rafgraph/spa-github-pages approach.
+    // For it to work, the index.html needs to read from sessionStorage.
+    // A more direct approach is often to copy index.html to 404.html in the build process.
+
+    const path = window.location.pathname;
+    const search = window.location.search;
+    const hash = window.location.hash;
+
+    // If page is https://user.github.io/repo/ (or /repo for short)
+    // and path is /repo/foo/bar?q=1#hash
+    // then target is /repo/?p=/foo/bar&q=q=1#hash
+    // The Next.js router doesn't natively support this query param `p` for routing.
+
+    // Fallback: redirect to the base path root.
+    const redirectUrl = basePath + '/';
+    console.log('404 - Attempting to redirect to:', redirectUrl);
+    window.location.replace(redirectUrl);
+  </script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; }
+    h1 { font-size: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Page Not Found</h1>
+  <p>You will be redirected to the homepage shortly.</p>
+  <p>If you are not redirected, <a id="redirect-link" href="/eattime/">click here</a>.</p>
+  <script>
+    // Update link href dynamically for safety
+    document.getElementById('redirect-link').href = basePath + '/';
+  </script>
+</body>
+</html>
