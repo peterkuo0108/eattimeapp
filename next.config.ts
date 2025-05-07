@@ -3,6 +3,7 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export', // Add this line to enable static export
+  basePath: '/eattime', // Add this for GitHub Pages if your repo is 'eattime'
   typescript: {
     ignoreBuildErrors: true,
   },
