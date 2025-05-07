@@ -11,12 +11,12 @@ const inter = Inter({
 // Define metadata object satisfying the Metadata type
 export const metadata: Metadata = {
   title: '食刻', // Updated app title
-  description: '免費、無廣告的營養管理程式',
+  description: '免費、無廣告的營養管理平台', // Updated app description
   manifest: '/manifest.json', // Link to the manifest file
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: '食刻',
+    title: '食刻', // Updated app title for Apple Web App
     // startupImage: [...] // Optionally add startup images
   },
 };
@@ -38,7 +38,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="食刻" />
-        <meta name="description" content="免費、無廣告的營養管理程式" />
+        <meta name="description" content="免費、無廣告的營養管理平台" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-config" content="/icons/browserconfig.xml" />

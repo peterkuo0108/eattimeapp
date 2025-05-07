@@ -1,7 +1,7 @@
 {
   "name": "食刻",
   "short_name": "食刻",
-  "description": "免費、無廣告的營養管理程式",
+  "description": "免費、無廣告的營養管理平台",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",

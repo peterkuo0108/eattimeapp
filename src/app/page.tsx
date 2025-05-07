@@ -192,10 +192,10 @@ export default function Home() {
     return (
       <div className="flex flex-col items-center justify-center flex-grow bg-background animate-fade-scale-in">
         <Image
-          src="/logo.png" // Updated logo path
-          alt="食刻 Logo"
-          width={120} // Adjusted size
-          height={120} // Adjusted size
+          src="/logo.png" 
+          alt="食刻 Logo" // Updated alt text
+          width={120} 
+          height={120} 
           priority
           data-ai-hint="groceries box"
         />
@@ -230,7 +230,7 @@ export default function Home() {
        <iframe
          ref={iframeRef}
          src={TARGET_URL}
-         title="食刻 Web App"
+         title="食刻" // Updated iframe title
          // Ensure iframe takes full height and width of its container
          className="w-full h-full border-none flex-grow"
          // Allow necessary permissions, be mindful of security
